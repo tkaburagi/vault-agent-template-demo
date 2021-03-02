@@ -1,0 +1,3 @@
+{{ with $secrets := secret "gcp/key/sql-admin" }}
+{{ $secrets.Data.private_key_data }}
+{{ end }}
