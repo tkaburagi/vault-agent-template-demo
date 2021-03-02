@@ -5,15 +5,15 @@ auto_auth {
   method "approle" {
     mount_path = "auth/approle"
     config = {
-      role_id_file_path                   = "/Users/kabu/hashicorp/vault/vault-agent-template-demo/roleid"
-      secret_id_file_path                 = "/Users/kabu/hashicorp/vault/vault-agent-template-demo/secretid"
+      role_id_file_path                   = "(DIR)/roleid"
+      secret_id_file_path                 = "(DIR)secretid"
       remove_secret_id_file_after_reading = false
     }
   }
 
   sink "file" {
     config = {
-      path = "/Users/kabu/hashicorp/vault/vault-agent-template-demo/approleToken"
+      path = "(DIR)/approleToken"
     }
   }
 }
@@ -33,6 +33,6 @@ vault {
 }
 
 template {
-  source      = "/Users/kabu/hashicorp/vault/vault-agent-template-demo/template.ctmpl"
-  destination = "/Users/kabu/hashicorp/vault/vault-agent-template-demo/render.txt"
+  source      = "(DIR)/template.ctmpl"
+  destination = "(DIR)/render.txt"
 }
