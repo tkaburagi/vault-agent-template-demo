@@ -27,12 +27,17 @@ listener "tcp" {
   tls_disable = true
 }
 
-
 vault {
   address = "http://127.0.0.1:8200"
 }
 
 template {
-  source      = "(DIR)/template.ctmpl"
-  destination = "(DIR)/render.txt"
+  source      = "(DIR)/template-mysql.ctmpl"
+  destination = "(DIR)/render-mysql.txt"
+}
+
+
+template {
+  source      = "(DIR)/template-gcp.ctmpl"
+  destination = "(DIR)/render-gcp.txt"
 }
