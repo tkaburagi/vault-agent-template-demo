@@ -1,0 +1,3 @@
+{{ with $secrets := secret "database/static-creds/static-gsql" }}
+{{ $secrets | toJSON }}
+{{ end }}
